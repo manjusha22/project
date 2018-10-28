@@ -20,6 +20,16 @@
     <!-- Custom styles for this template -->
     <link href="css/business-casual.min.css" rel="stylesheet">
     <style>
+        @media only screen and (max-width: 1201px) {
+            .intro-text {
+                display: none;
+            }
+            .page-section{
+                margin-right:5%;
+                max-width: 100%;
+                margin-left:-2%
+            }
+        }
         .f{
             font-size: 20px;
         }
@@ -66,6 +76,11 @@
             padding-top: 60px;
         }
 
+        .s{
+            width: 280px;
+            color: black;
+            float:left;
+        }
     </style>
 </head>
 
@@ -79,7 +94,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="navbar" style="background-color: brown; z-index: 2; margin-top: -70px">
     <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="home.html">Smart City</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -89,18 +104,27 @@
                     <a class="nav-link text-uppercase text-expanded" href="home.html">Home<span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="about.html">About</a>
+                <li class="dropdown" >
+                    <a class="text-uppercase">About</a>
+                    <ul class="dropdown-menu s" style="background-color: seagreen">
+                        <li class="nav-item px-lg-4"> <a href="about.html" >What is Smart City</a></li>
+                        <li class="nav-item px-lg-4"> <a href="about1.html" >Smart City Features</a></li>
+                        <li class="nav-item px-lg-4">  <a href="about2.html">Smart City Coverage</a></li>
+                        <li class="nav-item px-lg-4">  <a href="about3.html">Smart City Selection</a></li>
+                        <li class="nav-item px-lg-4"> <a href="about4.html">Smart City Guidelines</a></li>
+                        <li class="nav-item px-lg-4"> <a href="about5.html">Strategy</a></li><br/><br/>
+                        <li class="nav-item px-lg-4" style="margin-left: -18%"> <a href="about6.html" >&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Events </a></li>
+                    </ul>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="C:\Users\Ritesh\Desktop\Final\jaipur\index.html">jaipur</a>
+                    <a class="nav-link text-uppercase text-expanded" href="..\jaipur\index.html">jaipur</a>
                 </li>
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="#">About us</a>
+                    <a class="nav-link text-uppercase text-expanded" href="profile.html">About us</a>
                 </li>
 
                 <li class="nav-item px-lg-4">
-                    <a class="nav-link text-uppercase text-expanded" href="#">contact us</a>
+                    <a class="nav-link text-uppercase text-expanded" href="contact.html">contact us</a>
                 </li>
             </ul>
         </div>
@@ -173,7 +197,22 @@
     }
     add_chatinline();
 </script>
+<script>
+    $(function(){
+        $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).fadeIn("fast");
+                $(this).toggleClass('open');
+                $('b', this).toggleClass("caret caret-up");
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).fadeOut("fast");
+                $(this).toggleClass('open');
+                $('b', this).toggleClass("caret caret-up");
+            });
+    });
 
+</script>
 </body>
 
 </html>
